@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import SvgIcon from '@material-ui/core/SvgIcon'
+import SvgIcon from '@material-ui/core/SvgIcon';
 import Badge from '@material-ui/core/Badge';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
@@ -99,8 +99,8 @@ class PrimarySearchAppBar extends React.Component {
 
 		return (
 			<div className={classes.root}>
-				<MuiThemeProvider theme={Black} >
-					<AppBar position="static" color='primary'>
+				<MuiThemeProvider theme={Black}>
+					<AppBar position='static' color='primary'>
 						<Toolbar>
 							<img
 								style={{ width: '100px' }}
@@ -110,14 +110,17 @@ class PrimarySearchAppBar extends React.Component {
 							<div className={classes.grow} />
 							<div>
 								<IconButton color='inherit'>
-									<Badge color='inherit' badgeContent={this.props.battleField.length}>
-                    <SvgIcon>
-                    <path fill="none" d="M0 0h24v24H0V0z"/><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zM10 9h8v2h-8zm0 3h4v2h-4zm0-6h8v2h-8z"/>
-                    </SvgIcon>
+									<Badge
+										color='secondary'
+										badgeContent={this.props.battleField.length}
+									>
+										<SvgIcon>
+											<path fill='none' d='M0 0h24v24H0V0z' />
+											<path d='M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zM10 9h8v2h-8zm0 3h4v2h-4zm0-6h8v2h-8z' />
+										</SvgIcon>
 									</Badge>
 								</IconButton>
 							</div>
-							
 						</Toolbar>
 					</AppBar>
 				</MuiThemeProvider>
