@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import SimpleCard from './components/Card';
 import Search from './components/Search';
 import Popout from './components/Popout';
+import EditPopout from './components/EditPopout';
 //--------------MUI-------------------------------
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
@@ -49,6 +50,7 @@ class App extends Component {
 		this.deleteCard = this.deleteCard.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.addToBattleField = this.addToBattleField.bind(this);
+		this.editChanger = this.editChanger.bind(this);
 	}
 	//--------------life cycle-------------------------------
 
@@ -163,12 +165,20 @@ class App extends Component {
 			));
 		return (
 			<div className='App'>
-				{this.state.showPopout && (
-					<Popout
-						monster={this.state.currentCard[0]}
-						showStatus={this.showStatus}
-					/>
-				)}
+				{this.state.showPopout &&
+					(this.state.edit ? (
+						<EditPopout
+							monster={this.state.currentCard[0]}
+							showStatus={this.showStatus}
+							editChanger={this.editChanger}
+						/>
+					) : (
+						<Popout
+							monster={this.state.currentCard[0]}
+							showStatus={this.showStatus}
+							editChanger={this.editChanger}
+						/>
+					))}
 				<MuiThemeProvider theme={Black}>
 					<Navigation battleField={this.state.battleField} />
 					<Search
