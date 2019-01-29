@@ -51,6 +51,8 @@ class App extends Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.addToBattleField = this.addToBattleField.bind(this);
 		this.editChanger = this.editChanger.bind(this);
+		this.editFalse = this.editFalse.bind(this);
+		this.close = this.close.bind(this);
 	}
 	//--------------life cycle-------------------------------
 
@@ -84,6 +86,14 @@ class App extends Component {
 	editChanger() {
 		this.setState({ edit: !this.state.edit });
 	}
+	editFalse() {
+		this.setState({ edit: false });
+	}
+	close() {
+		this.showStatus();
+		this.editFalse();
+	}
+
 	showStatus() {
 		this.setState({ showPopout: !this.state.showPopout });
 	}
@@ -171,6 +181,7 @@ class App extends Component {
 							monster={this.state.currentCard[0]}
 							showStatus={this.showStatus}
 							editChanger={this.editChanger}
+							close={this.close}
 						/>
 					) : (
 						<Popout

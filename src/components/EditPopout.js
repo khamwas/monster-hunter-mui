@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 //--------------COMPONENTS-------------------------------
 // import Card from './Card';
 //--------------MUI-------------------------------
@@ -140,19 +141,23 @@ class EditPopout extends Component {
 		this.setState({ [name]: e.target.value });
 	}
 
+	submitClone() {
+		// Axios.post
+	}
+
 	render() {
 		return (
 			<div>
 				<MuiThemeProvider style={Black}>
 					<Dialog
-						onClose={this.props.showStatus}
+						onClose={this.props.close}
 						aria-labelledby='customized-dialog-title'
 						open={this.props.showStatus}
 						fullWidth='true'
 					>
 						<DialogTitle
 							id='customized-dialog-title'
-							onClose={this.props.showStatus}
+							onClose={this.props.close}
 						>
 							<TextField
 								autoFocus
